@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Searchbar = () => {
+  useEffect(()=>{
+    navigator.geolocation.getCurrentPosition(successCallback,errorCallback)
+  })
+  const successCallback = (position) => {
+    console.log(position);
+  };
+  
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+  
   const searchHandler=(event)=>{
     console.log('sup')
   }
